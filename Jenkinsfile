@@ -11,7 +11,7 @@ properties([
 node{
     
     stage('CheckOutCode'){
-        git branch: 'development', credentialsId: 'e36e58e1-2845-4868-92b2-aae7fcf88927', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+        git branch: 'main', credentialsId: 'javahome2', url: 'https://github.com/Thimraj/WebApps.git'
     }
     
     stage('Build'){
@@ -44,12 +44,11 @@ node{
     }
     */
     stage('SendEmailNotification'){
-        mail bcc: 'devopstrainingblr@gmail.com', body: '''Build Done.
-
+        mail bcc: 'mtrdevopsr@gmail.com', body: '''Build Done.
         Regards,
         Mithun Technologies,
         9980923226.
-        ''', cc: 'devopstrainingblr@gmail.com', from: 'devopstrainingblr@gmail.com', replyTo: 'devopstrainingblr@gmail.com', subject: 'Duild done', to: 'devopstrainingblr@gmail.com'
+        ''', cc: 'mtrdevops@gmail.com', from: 'thimrajdevops@gmail.com', replyTo: 'mtrdevops@gmail.com', subject: 'Duild done', to: 'mtrdevops@gmail.com'
     }
     
     stage('SendSlackNotifications'){
